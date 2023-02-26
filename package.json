@@ -1,0 +1,62 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@googlemaps/react-wrapper": "^1.1.35",
+    "@mui/material": "^5.10.7",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "aos": "^2.3.4",
+    "baffle": "^0.3.6",
+    "bootstrap": "^5.2.1",
+    "concurrently": "^7.6.0",
+    "express": "^4.18.2",
+    "json-server": "^0.17.0",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-countdown": "^2.3.2",
+    "react-countup": "^6.3.1",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.4",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.4.1",
+    "react-scripts": "5.0.1",
+    "react-scroll-trigger": "^0.6.14",
+    "redux": "^4.2.0",
+    "sass": "^1.55.0",
+    "sweetalert": "^2.1.2",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel start:**",
+    "start:client": "react-scripts start",
+    "start:server": "node server.js",
+    "build": "react-scripts build",
+    "deploy": "node server",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
