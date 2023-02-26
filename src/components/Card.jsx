@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Card({ image, title, id }) {
   const deleteItem = (id) => {
-    fetch(`http://localhost:7000/products/${id}`, {
+    fetch(`http://localhost:5555/products/${id}`, {
       method: "DELETE",
     });
   };

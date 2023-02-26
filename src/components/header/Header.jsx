@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react";
-import style from "./header.module.scss";
-import { NavLink, Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import basketimg from "../../assets/images/basket.gif";
-import ac from "../../assets/images/ac.jpg";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import basketimg from "../../assets/images/basket.gif";
 
 function Header() {
   const [toggle, setToggle] = useState(false);
@@ -44,7 +41,7 @@ function Header() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:7000/products")
+    fetch("http://localhost:5555/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
