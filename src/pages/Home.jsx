@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
-import Slider from "../components/Slider";
-import rdr2 from "../assets/images/rdr2.png";
-import Card from "../components/card/Card";
-import plague from "../assets/images/plague.jfif";
-import Countdown from "react-countdown";
-import delta from "../assets/images/delta.jpg";
-import { Link } from "react-router-dom";
-import Featured from "../components/featured/Featured";
-import Social from "../components/Social";
 import Aos from "aos";
+import { useEffect, useState } from "react";
+import Countdown from "react-countdown";
+import { Link } from "react-router-dom";
+import delta from "../assets/images/delta.jpg";
+import plague from "../assets/images/plague.jfif";
+import rdr2 from "../assets/images/rdr2.png";
 import vr from "../assets/images/vr.jpg";
+import Slider from "../components/Slider";
+import Social from "../components/Social";
+import Featured from "../components/featured/Featured";
 
 function Home() {
   const [hov1, setHov1] = useState(false);
@@ -40,7 +39,7 @@ function Home() {
   const sliderGames = [];
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/products")
+    fetch("http://localhost:5555/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

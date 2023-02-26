@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function AddProduct() {
@@ -14,7 +14,7 @@ function AddProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://mock-json-api.vercel.app/products", {
+    fetch("http://localhost:5555/products", {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
@@ -29,13 +29,13 @@ function AddProduct() {
   };
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/platforms")
+    fetch("http://localhost:5555/platforms")
       .then((res) => res.json())
       .then((data) => setPlatforms(data));
   }, []);
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/tags")
+    fetch("http://localhost:5555/tags")
       .then((res) => res.json())
       .then((data) => setTags(data));
   }, []);

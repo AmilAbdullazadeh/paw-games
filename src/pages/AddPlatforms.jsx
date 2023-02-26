@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Addplatform() {
@@ -6,7 +6,7 @@ function Addplatform() {
   const [platforms, setPlatforms] = useState([]);
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/platforms")
+    fetch("http://localhost:5555/platforms")
       .then((res) => res.json())
       .then((data) => setPlatforms(data));
   }, []);
@@ -16,7 +16,7 @@ function Addplatform() {
     let data = {
       name: platform,
     };
-    fetch("https://mock-json-api.vercel.app/platforms", {
+    fetch("http://localhost:5555/platforms", {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
@@ -28,7 +28,7 @@ function Addplatform() {
   };
 
   const handleDelete = (id) => {
-    fetch(`https://mock-json-api.vercel.app/platforms/${id}`, {
+    fetch(`http://localhost:5555/platforms/${id}`, {
       method: "DELETE",
     }).then((res) => {
       if (res.status === 200) {

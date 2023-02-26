@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function Detail() {
   const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
-    fetch(`https://mock-json-api.vercel.app/products/${id}`)
+    fetch(`http://localhost:5555/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data)

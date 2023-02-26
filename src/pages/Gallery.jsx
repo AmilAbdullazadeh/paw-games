@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 function Gallery() {
   const [gallery, setGallery] = useState([]);
@@ -6,7 +6,7 @@ function Gallery() {
   const [id, setId] = useState("");
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/gallery")
+    fetch("http://localhost:5555/gallery")
       .then((res) => res.json())
       .then((data) => setGallery(data));
   }, []);

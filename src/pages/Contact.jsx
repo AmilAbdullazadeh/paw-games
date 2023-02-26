@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import swal from "sweetalert";
 import Aos from "aos";
+import { useEffect, useState } from "react";
+import swal from "sweetalert";
 
 function Contact() {
   const [data, setData] = useState({});
@@ -52,7 +52,7 @@ function Contact() {
     e.preventDefault();
     e.target.reset();
     if (check && echeck) {
-      fetch("https://mock-json-api.vercel.app/usercomments", {
+      fetch("http://localhost:5555/usercomments", {
         method: "POST",
         headers: {
           "Content-type": "Application/json",
@@ -69,7 +69,7 @@ function Contact() {
   };
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/usercomments")
+    fetch("http://localhost:5555/usercomments")
       .then((res) => res.json())
       .then((data) => setComments(data));
   }, [toggle]);

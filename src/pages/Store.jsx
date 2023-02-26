@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ac from "../assets/images/ac.jpg";
 import Featured from "../components/featured/Featured";
 
 function Store() {
@@ -25,7 +24,7 @@ function Store() {
     }
   };
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/products")
+    fetch("http://localhost:5555/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -34,13 +33,13 @@ function Store() {
   }, []);
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/platforms")
+    fetch("http://localhost:5555/platforms")
       .then((res) => res.json())
       .then((data) => setPlatormfs(data));
   }, []);
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/tags")
+    fetch("http://localhost:5555/tags")
       .then((res) => res.json())
       .then((data) => setTags(data));
   }, []);

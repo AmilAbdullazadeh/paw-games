@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 function EditProduct() {
   const { id } = useParams();
@@ -17,7 +17,7 @@ function EditProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://mock-json-api.vercel.app/products/${id}`, {
+    fetch(`http://localhost:5555/products/${id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "Application/json",
@@ -31,19 +31,19 @@ function EditProduct() {
   };
 
   useEffect(() => {
-    fetch(`https://mock-json-api.vercel.app/products/${id}`)
+    fetch(`http://localhost:5555/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/platforms")
+    fetch("http://localhost:5555/platforms")
       .then((res) => res.json())
       .then((data) => setPlatforms(data));
   }, []);
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/tags")
+    fetch("http://localhost:5555/tags")
       .then((res) => res.json())
       .then((data) => setTag(data));
   }, []);

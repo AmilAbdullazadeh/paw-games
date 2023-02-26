@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Addtag() {
@@ -6,7 +6,7 @@ function Addtag() {
   const [tags, settags] = useState([]);
 
   useEffect(() => {
-    fetch("hhttps://mock-json-api.vercel.app/tags")
+    fetch("hhttp://localhost:5555/tags")
       .then((res) => res.json())
       .then((data) => settags(data));
   }, []);
@@ -16,7 +16,7 @@ function Addtag() {
     let data = {
       name: tag,
     };
-    fetch("https://mock-json-api.vercel.app/tags", {
+    fetch("http://localhost:5555/tags", {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
@@ -28,7 +28,7 @@ function Addtag() {
   };
 
   const handleDelete = (id) => {
-    fetch(`https://mock-json-api.vercel.app/tags/${id}`, {
+    fetch(`http://localhost:5555/tags/${id}`, {
       method: "DELETE",
     }).then((res) => {
       if (res.status === 200) {

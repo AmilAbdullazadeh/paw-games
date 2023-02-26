@@ -7,7 +7,7 @@ function ViewProduct() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://mock-json-api.vercel.app/products/${id}`)
+    fetch(`http://localhost:5555/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);

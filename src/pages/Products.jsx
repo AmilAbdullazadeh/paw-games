@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import Card from "../components/Card";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Card from "../components/Card";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -28,7 +28,7 @@ function Products() {
   };
 
   useEffect(() => {
-    fetch("https://mock-json-api.vercel.app/products")
+    fetch("http://localhost:5555/products")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
