@@ -16,7 +16,11 @@ server.use(middlewares);
 //   next();
 // });
 // for cors error
-server.use(cors());
+server.use(
+  cors({
+    origin: "https://paw-games.vercel.app/"
+  })
+);
 server.use(router);
 
 server.listen(PORT, () => {
