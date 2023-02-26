@@ -18,7 +18,7 @@ server.use(middlewares);
 // for cors error
 server.use(
   cors({
-    origin: "http://localhost:5555",
+    origin: "https://paw-games.vercel.app",
   })
 );
 server.use(router);
